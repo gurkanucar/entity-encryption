@@ -1,0 +1,43 @@
+package com.gucardev.financebe.model;
+
+import com.gucardev.financebe.enumeration.CurrencyType;
+import com.gucardev.financebe.model.card.Card;
+import com.gucardev.financebe.model.transaction.Transaction;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import java.math.BigDecimal;
+import java.util.List;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+@NoArgsConstructor
+public class Account extends BaseEntity {
+
+  @Column(name = "accountNumber", length = 30)
+  private String accountNumber;
+
+  @Column(name = "accountName", length = 30)
+  private String accountName;
+
+  @Column(name = "balance", precision = 2, scale = 10)
+  private BigDecimal balance;
+
+  private String IBAN;
+
+  @Enumerated(EnumType.STRING)
+  private CurrencyType currencyType;
+
+  @ManyToOne private User user;
+
+  @OneToMany private List<Transaction> transactions;
+
+  @OneToMany private List<Card> cards;
+}
