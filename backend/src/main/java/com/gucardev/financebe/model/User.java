@@ -28,5 +28,6 @@ public class User extends BaseEntity {
   @Column(name = "identityNumber", length = 11)
   private String identityNumber;
 
-  @OneToMany private List<Account> transactions;
+  @OneToMany(mappedBy = "user")
+  private List<Account> accounts;
 }

@@ -7,6 +7,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import java.math.BigDecimal;
@@ -35,9 +36,13 @@ public class Account extends BaseEntity {
   @Enumerated(EnumType.STRING)
   private CurrencyType currencyType;
 
-  @ManyToOne private User user;
+  @JoinColumn(name = "user_id", nullable = false)
+  @ManyToOne
+  private User user;
 
-  @OneToMany private List<Transaction> transactions;
+  @OneToMany(mappedBy = "account")
+  private List<Transaction> transactions;
 
-  @OneToMany private List<Card> cards;
+  @OneToMany(mappedBy = "account")
+  private List<Card> cards;
 }
