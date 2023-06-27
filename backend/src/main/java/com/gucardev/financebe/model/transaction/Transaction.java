@@ -19,8 +19,8 @@ import lombok.Setter;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Transaction extends BaseEntity {
 
-  @JoinColumn(name = "account_id", nullable = false)
   @ManyToOne
+  @JoinColumn(name = "account_id", nullable = false)
   private Account account;
 
   private BigDecimal amount;

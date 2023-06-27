@@ -18,6 +18,5 @@ public class VirtualCard extends Card {
   @Column(name = "card_limit", precision = 38, scale = 2)
   private BigDecimal cardLimit;
 
-
   private boolean enabled;
 }

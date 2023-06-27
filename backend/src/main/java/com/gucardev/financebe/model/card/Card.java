@@ -33,10 +33,12 @@ public class Card extends BaseEntity {
 
   private Date validThrough;
 
-  @ManyToOne private User user;
-
-  @JoinColumn(name = "account_id", nullable = false)
   @ManyToOne
+  @JoinColumn(name = "user_id")
+  private User user;
+
+  @ManyToOne
+  @JoinColumn(name = "account_id", nullable = false)
   private Account account;
 
   @OneToMany(mappedBy = "card")

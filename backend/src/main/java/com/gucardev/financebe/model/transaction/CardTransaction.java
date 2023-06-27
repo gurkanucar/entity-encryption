@@ -17,7 +17,7 @@ import lombok.Setter;
 @PrimaryKeyJoinColumn(name = "transaction_id")
 public class CardTransaction extends BaseEntity {
 
-  @JoinColumn(name = "card_id", nullable = false)
   @ManyToOne
+  @JoinColumn(name = "card_id", nullable = false)
   private Card card;
 }

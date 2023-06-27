@@ -15,7 +15,6 @@ import java.util.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 @Getter
 @Setter
 @Entity
@@ -36,8 +35,8 @@ public class Account extends BaseEntity {
   @Enumerated(EnumType.STRING)
   private CurrencyType currencyType;
 
-  @JoinColumn(name = "user_id", nullable = false)
   @ManyToOne
+  @JoinColumn(name = "user_id", nullable = false)
   private User user;
 
   @OneToMany(mappedBy = "account")
