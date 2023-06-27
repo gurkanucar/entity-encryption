@@ -23,8 +23,6 @@ public class Transaction extends BaseEntity {
   @ManyToOne
   private Account account;
 
-  private String accountId;
-
   private BigDecimal amount;
 
   private String description;

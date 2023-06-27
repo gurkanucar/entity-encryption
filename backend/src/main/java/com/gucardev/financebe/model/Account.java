@@ -28,7 +28,7 @@ public class Account extends BaseEntity {
   @Column(name = "accountName", length = 30)
   private String accountName;
 
-  @Column(name = "balance", precision = 2, scale = 10)
+  @Column(name = "balance", precision = 10, scale = 2)
   private BigDecimal balance;
 
   private String IBAN;
