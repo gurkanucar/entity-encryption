@@ -13,9 +13,11 @@ public interface CardMapper {
 
   @Mapping(source = "user.id", target = "userId")
   @Mapping(source = "account.id", target = "accountId")
+  @Mapping(source = "cardAttributes", target = "cardAttributes")
   CardDto toDto(Card entity);
 
   @Mapping(source = "userId", target = "user.id")
   @Mapping(source = "accountId", target = "account.id")
+  @Mapping(source = "cardAttributes", target = "cardAttributes")
   Card toEntity(CardDto dto);
 }

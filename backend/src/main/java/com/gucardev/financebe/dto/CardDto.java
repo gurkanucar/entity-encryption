@@ -1,6 +1,7 @@
 package com.gucardev.financebe.dto;
 
 import java.util.Date;
+import java.util.Map;
 import java.util.UUID;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,4 +16,5 @@ public class CardDto {
   private Date validThrough;
   private UUID userId;
   private UUID accountId;
+  private Map<String, String> cardAttributes;
 }
