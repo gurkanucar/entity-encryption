@@ -52,7 +52,7 @@ public class Card extends BaseEntity {
 
   @ElementCollection(fetch = FetchType.EAGER)
   @MapKeyColumn(name = "name")
-  @Column(name = "value")
+  @Column(name = "attr_value")
   @CollectionTable(name = "card_attributes", joinColumns = @JoinColumn(name = "card_id"))
   private Map<String, String> cardAttributes = new HashMap<>();
 }
