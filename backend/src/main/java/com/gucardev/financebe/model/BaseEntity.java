@@ -27,16 +27,13 @@ public class BaseEntity {
   @Column(columnDefinition = "BINARY(16)")
   private UUID id;
 
-  @CreatedDate
-  private LocalDateTime createdDate;
+  @CreatedDate private LocalDateTime createdDate;
 
-  @LastModifiedDate
-  private LocalDateTime updatedDate;
+  @LastModifiedDate private LocalDateTime updatedDate;
 
   @CreatedBy
   @Column(updatable = false)
   private String createdBy;
 
-  @LastModifiedBy
-  private String updatedBy;
+  @LastModifiedBy private String updatedBy;
 }

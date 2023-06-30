@@ -21,10 +21,6 @@ public enum CurrencyType {
     this.displayName = displayName;
   }
 
-  public String getDisplayName() {
-    return displayName;
-  }
-
   public static CurrencyType getByString(String name) {
     for (CurrencyType currencyType : values()) {
       if (currencyType.name().equalsIgnoreCase(name)) {
@@ -32,5 +28,9 @@ public enum CurrencyType {
       }
     }
     throw new IllegalArgumentException("Invalid CurrencyType: " + name);
+  }
+
+  public String getDisplayName() {
+    return displayName;
   }
 }

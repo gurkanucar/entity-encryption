@@ -12,10 +12,6 @@ public enum RevType {
     this.label = label;
   }
 
-  public String getLabel() {
-    return label;
-  }
-
   public static RevType fromInt(int value) {
     return switch (value) {
       case 0 -> ADD;
@@ -23,5 +19,9 @@ public enum RevType {
       case 2 -> DELETE;
       default -> UNKNOWN;
     };
+  }
+
+  public String getLabel() {
+    return label;
   }
 }
