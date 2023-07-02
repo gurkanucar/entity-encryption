@@ -4,12 +4,17 @@ import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class EncryptionUtil {
-  private String key = "A3Hd$G6!sWSecret";
-  private String algo = "AES/ECB/PKCS5PADDING";
+
+  @Value("${encryption.key}")
+  private String key;
+
+  @Value("${encryption.algorithm}")
+  private String algo;
 
   public String encrypt(String value) {
     try {
