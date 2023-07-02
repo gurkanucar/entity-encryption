@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -32,6 +33,8 @@ yarn-error.log*
 .vercel
 
 
+=======
+>>>>>>> da44de7 (fix: git repo bug fix)
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -64,4 +67,8 @@ build/
 !**/src/test/**/build/
 
 ### VS Code ###
+<<<<<<< HEAD
 .vscode/
+=======
+.vscode/
+>>>>>>> da44de7 (fix: git repo bug fix)
