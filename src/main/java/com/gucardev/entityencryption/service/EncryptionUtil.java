@@ -4,17 +4,21 @@ import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class EncryptionUtil {
 
-  @Value("${encryption.key}")
-  private String key;
+  private final String key;
+  private final String algo;
 
-  @Value("${encryption.algorithm}")
-  private String algo;
+  public EncryptionUtil(
+      @Value("${encryption.key}") String key, @Value("${encryption.algorithm}") String algo) {
+    this.key = key;
+    this.algo = algo;
+  }
 
   public String encrypt(String value) {
     try {

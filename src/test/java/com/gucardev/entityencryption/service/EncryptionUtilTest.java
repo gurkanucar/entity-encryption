@@ -1,15 +1,30 @@
 package com.gucardev.entityencryption.service;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.test.context.SpringBootTest;
 
+@SpringBootTest
 class EncryptionUtilTest {
 
-  private final EncryptionUtil encryptionUtil = new EncryptionUtil();
-  private final String testValue = "Hello, World!";
+  @Value("${encryption.key}")
+  private String key;
+
+  @Value("${encryption.algorithm}")
+  private String algo;
+
+  private EncryptionUtil encryptionUtil;
+
+  @BeforeEach
+  void setup() {
+    encryptionUtil = new EncryptionUtil(key, algo);
+  }
 
   @Test
   void testEncryptDecrypt() {
+    String testValue = "Hello, World!";
     String encryptedValue = encryptionUtil.encrypt(testValue);
     String decryptedValue = encryptionUtil.decrypt(encryptedValue);
 
